@@ -1,0 +1,223 @@
+/* addpokemon.css */
+
+/* --- Pokedex Loading Screen --- */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #212121; /* Dark background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    flex-direction: column;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out; /* Fade out */
+}
+
+#loader.hidden {
+    opacity: 0;
+    pointer-events: none; /* Prevent clicks on loader when hidden */
+}
+
+#loader p {
+    color: #ffffff;
+    font-size: 1.5em;
+    margin-top: 20px;
+    font-family: 'Courier New', Courier, monospace; /* Retro font */
+    text-shadow: 1px 1px 2px #000; /* Text shadow */
+}
+
+.spinner {
+    width: 100px;
+    height: 100px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* --- Wild Pokémon Encounter --- */
+#pokemon-encounter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* height: 400px; Remove fixed height */
+    min-height: 300px; /* Set a min-height instead */
+    background: url('/assets/encounter-background.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    margin-bottom: 20px;
+    border: 5px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.2); /* Cool box shadow */
+    padding: 20px; /* Increased padding */
+    animation: encounterAppear 0.8s ease-out; /* Encounter area animation */
+    text-align: center; /* Center text */
+}
+
+@keyframes encounterAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#wild-pokemon-text {
+    font-size: 2.2em; /* Slightly larger */
+    color: #ffd700; /* Gold */
+    text-shadow: 2px 2px 4px #000, 0 0 10px #fff; /* Glow */
+    margin-bottom: 10px; /* Reduced margin */
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: textAppear 0.8s ease-out; /* Text animation */
+}
+
+#pokemon-icon-display {
+    width: 180px; /* Slightly smaller */
+    height: 180px; /* Slightly smaller */
+    margin-bottom: 10px; /* Reduced margin */
+    animation: pokemonAppear 0.8s ease-out; /* Image animation */
+    background-color: rgba(240, 240, 240, 0.7); /* Slightly transparent background */
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Image shadow */
+}
+
+#pokemon-icon-display img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+#pokemon-icon-display img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7); /* Hover shadow */
+}
+
+#pokemon-details {
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    margin-bottom: 10px; /* add margin */
+}
+
+#pokemon-name-display {
+    font-size: 1.8em; /* Smaller name */
+    text-shadow: 1px 1px 2px #000, 0 0 5px #fff; /* Glow */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#pokemon-description-display {
+    text-shadow: 1px 1px 2px #000;
+    overflow: auto;
+    max-height: 100px; /* Smaller max height */
+    box-sizing: border-box;
+    padding: 10px; /* Padding for description */
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent background for description */
+    border-radius: 5px;
+    margin-top: 10px;
+    line-height: 1.4; /* Better line spacing */
+    font-size: 0.9em; /* Smaller text */
+}
+
+/* --- Action Button --- */
+#action-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#addPokemonButton {
+    padding: 10px 20px; /* Smaller padding */
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    border-radius: 8px; /* More rounded */
+    cursor: pointer;
+    font-size: 1em; /* Smaller text */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transitions */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Box shadow */
+    width: 80%; /* make button smaller */
+    max-width: 300px; /* limit the button max size */
+}
+
+#addPokemonButton:hover {
+    background-color: #367c38; /* Darker Green */
+    transform: translateY(-2px); /* Lift slightly */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Larger shadow */
+}
+
+#addPokemonButton:disabled {
+    background-color: gray;
+    cursor: default;
+    box-shadow: none; /* Remove shadow when disabled */
+    transform: translateY(0); /* Reset transform */
+}
+
+/* --- Animations --- */
+@keyframes textAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pokemonAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* --- Media Queries for Smaller Screens --- */
+@media (max-width: 600px) {
+    #pokemon-encounter {
+        min-height: 250px; /* Even smaller min-height */
+        padding: 10px; /* Smaller padding */
+    }
+
+    #wild-pokemon-text {
+        font-size: 1.8em; /* Smaller text */
+    }
+
+    #pokemon-icon-display {
+        width: 150px; /* Even smaller */
+        height: 150px; /* Even smaller */
+    }
+
+    #pokemon-name-display {
+        font-size: 1.5em; /* Even smaller name */
+    }
+
+    #pokemon-description-display {
+        font-size: 0.8em; /* Even smaller text */
+        max-height: 80px; /* Smaller max-height */
+    }
+    #addPokemonButton {
+      font-size: 0.9em;
+    }
+}

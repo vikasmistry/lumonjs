@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Pokémon to LifeUp Shop</title>
+    <link rel="stylesheet" href="/css/style.css"> <!-- Existing CSS -->
+    <link rel="stylesheet" href="/css/addpokemon.css"> <!-- New CSS -->
+</head>
+<body>
+    <!-- Pokedex Loading Screen -->
+    <div id="loader">
+        <img src="/assets/images/pokeball.png" alt="Pokeball Spinner" class="spinner">
+        <p>Loading Pokédex...</p>
+    </div>
+
+    <header>
+        <!-- <h1>Add Pokémon to LifeUp Shop</h1> -->
+    </header>
+    <main>
+        <section id="pokemon-encounter">
+            <p id="wild-pokemon-text">A wild Pokémon appears!</p>
+            <div id="pokemon-icon-display">
+                <img src="" alt="Pokemon Icon">
+            </div>
+            <div id="pokemon-details">
+                <h3 id="pokemon-name-display">Loading Pokémon Name...</h3>
+                <p id="pokemon-description-display">Loading description...</p>
+            </div>
+        </section>
+
+        <section id="action-section">
+            <!-- <h2>Add to Shop Action</h2> -->
+            <button id="addPokemonButton" disabled>Add Pokémon to Shop</button>
+        </section>
+    </main>
+    <!-- <script src="/js/lifeup_fetch.js"></script> -->
+    <!-- <script src="/js/pokeapi_fetch.js"></script> -->
+    <!-- <script src="/js/lifeup_fetch.js"></script> -->
+    <!-- <script src="/js/evolve.js"></script> -->
+    <script src="/js/addpokemon.js"></script>
+    <script src="/js/utils.js"></script>
+    <script>
+        // Hide the loader once the page has fully loaded
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            if (loader) {
+                loader.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

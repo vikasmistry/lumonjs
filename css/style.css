@@ -1,0 +1,138 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+h1 {
+    color: #e3350d;
+    text-align: center;
+    margin-bottom: 30px;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+/* Styles for Pokedex View */
+.pokemon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+.pokemon-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+.pokemon-card:hover {
+    transform: translateY(-5px);
+}
+.pokemon-name {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+.owned-number {
+    color: #666;
+    font-size: 0.9em;
+}
+.count-badge {
+    background-color: #e3350d;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 0.8em;
+}
+.pokemon-icon {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 10px;
+    border-radius: 10px;
+}
+
+/* Styles for Add Pokemon Section in addpokemon.html */
+#input-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+#input-section h2, #result-section h2 {
+    color: #333;
+    margin-top: 0;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.input-group input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box; /* to include padding and border in the element's total width and height */
+}
+
+#addPokemonButton {
+    background-color: #28a745; /* Bootstrap success color */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#addPokemonButton:hover {
+    background-color: #218838; /* Darker shade for hover effect */
+}
+
+#result-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    word-wrap: break-word; /* For long URLs */
+}
+
+#addItemResult textarea {
+    width: 100%;
+    box-sizing: border-box;
+    resize: vertical; /* Allow vertical resizing */
+    font-family: monospace;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #eee;
+    color: #333;
+    font-size: 0.9em;
+}

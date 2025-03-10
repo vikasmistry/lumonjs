@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Evolution</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/addpokemon.css">
+    <link rel="stylesheet" href="/css/evolutionPage.css"> </head>
+<body>
+    <div id="loader">
+        <img src="/assets/pokeball.svg" alt="Pokeball Spinner" class="spinner">
+        <p>Loading Pokédex...</p>
+    </div>
+
+    <header>
+        <!-- <h1>Pokémon Evolution</h1> -->
+    </header>
+
+    <main>
+        <section id="pokemon-encounter">
+            <p id="wild-pokemon-text">What's this? A Pokémon is evolving!</p>
+            <div id="pokemon-icon-display">
+                <img src="" alt="Pokemon Icon">
+            </div>
+            <div id="pokemon-details">
+                <h3 id="pokemon-name-display">Loading Pokémon Name...</h3>
+                <p id="pokemon-description-display">Loading description...</p>
+            </div>
+            <p id="evolution-message" style="display: none;"> </p>
+            <button class="return-button" id="returnButton">Return to Shop</button>
+        </section>
+
+
+    </main>
+        <!-- ... (rest of your HTML, including the button) ... -->
+        <!-- <script src="/js/lifeup_fetch.js"></script> -->
+        <script src="/js/utils.js"></script>
+        <script src="/js/evolutionPage.js"></script>
+    </body>
+    </html>
+
