@@ -6,7 +6,7 @@ const pokemonID = urlParams.get("id");
 const cid = urlParams.get("cid");
 const pokeidListParam = urlParams.get('pokeidList');
 let pokeid_list = [];
-const url = "192.168.1.100";
+const url = "localhost";
 const base = `http://${url}:13276/api/contentprovider?url=`;
 
 // Parse and decode pokeidList.  Handle potential errors.

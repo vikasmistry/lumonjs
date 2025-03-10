@@ -2,7 +2,7 @@
  * lifeup_fetch.js: Functions to interact with the LifeUp API for item data.
  */
 
-const base = "http://192.168.1.100:13276/api/contentprovider?url="; // Default base URL - adjust if needed
+const base = "http://localhost:13276/api/contentprovider?url="; // Default base URL - adjust if needed
 
 /**
  * (Renamed) Asynchronously fetches ALL item data for a given category ID from LifeUp API.

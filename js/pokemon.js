@@ -5,8 +5,8 @@ const numberFilter = document.querySelector("#number");
 const nameFilter = document.querySelector("#name");
 const notFoundMessage = document.querySelector("#not-found-message");
 //const cid = 6; // Remove the hardcoded cid
-const url = "192.168.1.100";
-//const url = "localhost"
+//const url = "192.168.1.100";
+const url = "localhost"
 const base = `http://${url}:13276/api/contentprovider?url=`;
 //const base = "http://localhost:13276/api/contentprovider?url="; // Default base URL - adjust if needed
 const MAX_POKEMONS = 1025;
