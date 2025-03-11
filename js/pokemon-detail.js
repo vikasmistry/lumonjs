@@ -6,8 +6,8 @@ const pokemonID = urlParams.get("id");
 const cid = urlParams.get("cid");
 const pokeidListParam = urlParams.get('pokeidList');
 let pokeid_list = [];
-const url = "localhost";
-const base = `http://${url}:13276/api/contentprovider?url=`;
+import config from "./config.js";
+const base = config.BASE_URL;
 
 // Parse and decode pokeidList.  Handle potential errors.
 if (pokeidListParam) {
@@ -62,7 +62,7 @@ async function loadPokemon(id) {
            return;
       }
       console.log(pokemonData);
-      displayPokemonDetails(pokemonData.pokemon); // i remove pokemonSpecies here
+      displayPokemonDetails(pokemonData.pokemon, pokemonData.pokemonSpecies); // i remove pokemonSpecies here
       
       window.history.pushState({}, "", `./pokemon-detail.html?id=${id}`);
   } catch (error) {
@@ -227,7 +227,7 @@ function createAndAppendElement(parent, tag, options = {}) {
 
 
 
-async function displayPokemonDetails(pokemon) {
+async function displayPokemonDetails(pokemon, pokemonSpecies) {
   const { name, id, types, weight, height, stats } = pokemon;
     if(!name){
       console.error("pokemon.name is undefined",pokemon)
@@ -266,6 +266,9 @@ async function displayPokemonDetails(pokemon) {
   document.querySelector(
     ".pokemon-detail-wrap .pokemon-detail p.body3-fonts.height"
   ).textContent = `${height / 10}m`;
+  document.querySelector(
+    ".pokemon-detail-wrap .pokemon-detail p.body3-fonts.genus"
+  ).textContent = `${getGenusName(pokemonSpecies)}`;
 
 
   // const abilitiesWrapper = document.querySelector(

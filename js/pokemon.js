@@ -1,21 +1,21 @@
 //const MAX_POKEMON = 1;
+import config from "./config.js";
+const base = config.BASE_URL;
+
+
 const listWrapper = document.querySelector(".list-wrapper");
 const searchInput = document.querySelector("#search-input");
 const numberFilter = document.querySelector("#number");
 const nameFilter = document.querySelector("#name");
 const notFoundMessage = document.querySelector("#not-found-message");
-//const cid = 6; // Remove the hardcoded cid
-//const url = "192.168.1.100";
-const url = "localhost"
-const base = `http://${url}:13276/api/contentprovider?url=`;
-//const base = "http://localhost:13276/api/contentprovider?url="; // Default base URL - adjust if needed
+
 const MAX_POKEMONS = 1025;
 const pokemonID = new URLSearchParams(window.location.search).get("id");
 const cid = new URLSearchParams(window.location.search).get("cid");
 // pokemon.js
 // ... (other code) ...
 
-allPokemons = [];
+let allPokemons = [];
 let item_ids_list = []; // List of LifeUp item IDs
 let pokeid_list = [];    // List of Pokemon IDs (stored in 'price')
 
@@ -152,5 +152,5 @@ function clearSearch() {
 if (cid) {
   fetchAllItemDataAsync(cid)
 }else{
-  fetchAllItemDataAsync(1) // default cid
+  fetchAllItemDataAsync(-1) // default cid
 }
