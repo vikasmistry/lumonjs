@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Pokémon to LifeUp Shop</title>
-    <link rel="stylesheet" href="/css/style.css"> <!-- Existing CSS -->
-    <link rel="stylesheet" href="/css/addpokemon.css"> <!-- New CSS -->
+    <link rel="stylesheet" href="./css/style.css"> <!-- Existing CSS -->
+    <link rel="stylesheet" href="./css/addpokemon.css"> <!-- New CSS -->
+    <script src="./js/addpokemon.js"></script>
+    <script src="./js/utils.js"></script>
 </head>
 <body>
     <!-- Pokedex Loading Screen -->
     <div id="loader">
-        <img src="/assets/images/pokeball.png" alt="Pokeball Spinner" class="spinner">
+        <img src="./assets/images/pokeball.png" alt="Pokeball Spinner" class="spinner">
         <p>Loading Pokédex...</p>
     </div>
 
@@ -38,8 +40,7 @@
     <!-- <script src="/js/pokeapi_fetch.js"></script> -->
     <!-- <script src="/js/lifeup_fetch.js"></script> -->
     <!-- <script src="/js/evolve.js"></script> -->
-    <script src="/js/addpokemon.js"></script>
-    <script src="/js/utils.js"></script>
+
     <script>
         // Hide the loader once the page has fully loaded
         window.addEventListener('load', function() {
